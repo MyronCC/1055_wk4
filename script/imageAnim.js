@@ -61,8 +61,17 @@
 	
 
 		zone.addEventListener("drop", function(e) {
+			// controling drop
+			if(zone.children.length == 0) {
 			e.preventDefault();
 			console.log('you dragged something on me');
+			}
+			// bug #1 fixed
+			else {
+			console.log('you have already place a piece here...');
+				return false;
+			};
+		
 
 			let piece = e.dataTransfer.getData("text/plain");
 			e.target.appendChild(document.querySelector(`#${piece}`));
