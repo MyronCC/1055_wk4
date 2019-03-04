@@ -84,6 +84,10 @@
 		// debugger;
 		// clean out the puzzle pieces div
 		piecesBoard.innerHTML = "";
+		// clean out the puzzle board
+		dropZones.forEach(zone => {
+			zone.innerHTML = "";
+		});
 
 		// generate new pieces
 		createPuzzlePieces(this.dataset.puzzleref);
